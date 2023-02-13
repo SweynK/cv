@@ -96,7 +96,7 @@ buttonNextInfo.addEventListener("click", () => {
 //------
 
 homeBtn.addEventListener("click", () => {
-  location.href = "../home/home.html";
+  location.href = "../home/index.html";
 });
 
 // buttons for experience.html page--------------
