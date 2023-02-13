@@ -1,0 +1,525 @@
+@font-face {
+  font-family: helveticaNeue;
+  src: url(../assets/fonts/HelveticaNeue.ttc);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: helveticaNeue;
+}
+
+
+body,
+html {
+  height: 100%;
+}
+.logo{
+  width: 42px;
+  height: 42px;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.container {
+  position: absolute;
+  height: 100%;
+}
+.done{
+  display: none;
+}
+.done-cv{
+  position: absolute;
+  top: 55%;  
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+.content {
+  position: relative;
+  padding: 20px 80px;
+  padding-bottom: 0;
+}
+
+.container {
+  width: max-content;
+  height: max-content;
+  font-family: Helvetica;
+  background-color: #f1f1f1;
+  
+}
+
+.cvContainer {
+  z-index: -1;
+  position: absolute;
+  right: 0%;
+  width: 45%;
+}
+
+.returnHomePageBtn {
+  z-index: 10;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 45px;
+  left: 40px;
+}
+.returnHomePageBtn i {
+  font-size: 20px;
+  padding: 5px;
+  color: #000000;
+  cursor: pointer;
+}
+.header {
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #000000;
+}
+.headlineP {
+  font-size: 24px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+.pagecalc {
+  font-size: 20px;
+}
+#form {
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.input-control {
+  width: 416px;
+  height: 122px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position: relative;
+}
+.input-control label {
+  font-size: 20px;
+  font-weight: 600;
+}
+.input-control input {
+  width: 385px;
+  height: 48px;
+  padding-left: 10px;
+  font-size: 16px;
+  border: 2px solid #bcbcbc;
+  border-radius: 4px;
+}
+.input-control input:focus {
+  outline: none;
+  border: 2px solid #818080;
+}
+.input-control.success input {
+  border-color: #98e37e;
+}
+.input-control.error input {
+  border-color: #ef5050;
+}
+.input-control #error-name,
+#error-lastName,
+#error-email,
+#error-phoneNum {
+  color: #a7a6a6;
+}
+.input-control i {
+  position: absolute;
+  top: 55px;
+  left: 360px;
+  visibility: hidden;
+}
+.input-control.error p {
+  visibility: visible;
+}
+.input-control.success i.fa-circle-check {
+  color: #98e37e;
+  visibility: visible;
+}
+.input-control.error i.fa-triangle-exclamation {
+  visibility: visible;
+  color: #f02424;
+}
+.name-surname{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.uploadPhoto {
+  width: 830px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+.uploadPhoto p {
+  font-size: 18px;
+  font-weight: 600;
+}
+.uploadPhoto input[type="file"] {
+  display: none;
+}
+.uploadPhoto label {
+  width: 108px;
+  height: 30px;
+  color: #ffffff;
+  background-color: #0e80bf;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+  cursor: pointer;
+}
+.personalInfo {
+  width: 830px;
+  margin-bottom: 20px;
+}
+/* .infoP {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px;
+} */
+.personalInfo textarea {
+  resize: none;
+  width: 798px;
+  height: 110px;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  margin-left: 10px;
+  border: 1px solid #bcbcbc;
+  outline: none;
+}
+.email,
+.telnumber {
+  width: 846px;
+}
+.email i,
+.telnumber i {
+  position: absolute;
+  left: 770px;
+}
+.email input,
+.telnumber input {
+  width: 798px;
+  height: 48px;
+}
+.btn-next {
+  width: 832px;
+  height: 200px;
+  margin-top: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.button {
+  width: 150px;
+  height: 50px;
+  margin-right: 20px;
+  border-radius: 4px;
+  background-color: #6b40e3;
+  font-size: 20px;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+
+#personalPage {
+  width: 700px;
+  margin: 50px auto;
+  display: flex;
+}
+#personalPage.active{
+  border-bottom: 2px solid #a7a6a6;
+}
+.personalCvInfo {
+  width: 450px;
+}
+.profile_image {
+  width: 246px;
+  height: 254px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.fullName {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 10px;
+  
+}
+.cvName p,
+.cvLastName p {
+  font-size: 34px;
+  color: #f93b1d;
+  font-weight: bold;
+}
+
+.cvContacts {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+.cvEmail p,
+.cvPhone p {
+  font-size: 18px;
+  color: #a7a6a6;
+}
+
+.aboutMeHeader p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f93b1d;
+  margin-bottom: 10px;
+}
+.aboutMeTxt p {
+  font-size: 16px;
+  color: #000000;
+  line-height: 22px;
+  margin-bottom: 30px;
+}
+
+/* Experience */
+.personalInfo{
+  width: 830px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.personalInfo i{
+  position: absolute;
+  top:50px;
+  right: 30px;
+  visibility: hidden;
+}
+.personalInfo.error textarea{
+  border-color: #EF5050;
+}
+.personalInfo.success textarea{
+  border-color: #98E37E;
+}
+.personalInfo.error i.fa-triangle-exclamation{
+  visibility: visible;
+  color: #F02424;
+}
+.personalInfo.success i.fa-circle-check{
+  color: #98E37E;
+  visibility: visible;
+}
+
+.infoP {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.employed,.position{
+  width: 846px;
+}
+.employed i, .position i{
+  position: absolute;
+  left: 770px;
+}
+.employed input,.position input{
+  width: 798px;
+  height: 48px;
+}
+input[type="date"]{
+  font-size: 24px; 
+  color: #818080; 
+}
+.input-control.date{
+    justify-content: space-evenly;
+}
+.date1-date2{
+  display: flex;
+}
+#addExp{
+  width: 290px;
+  height: 48px;
+  font-size: 16px;
+  background-color: #62A1EB;
+  color: #ffffff;
+  line-height: 14px;
+  padding: 18px;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 100px;
+}
+.add-more-info{
+  margin-top: 50px;
+  border-top: 2px solid #a7a6a6;
+}
+
+
+.personalInfo textarea{
+  resize: none;
+  width: 798px;
+  height: 130px;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  margin-left: 10px;
+  border: 1px solid #BCBCBC;
+  outline: none;
+}
+
+.btns-Next-back{
+  width: 100%;
+  height: 50px;
+  margin-top: 100px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.button-forward, .button-back{
+  width: 150px;
+  height: 50px;
+  border-radius: 4px;
+  background-color: #6B40E3;
+  font-size: 20px;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+.input-control #error-employ,#error-position{
+  color: #a7a6a6;
+}
+.experinece-cv,.graduate-cv{
+  width: 700px;
+  margin-bottom: 100px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.experinece-cv.active{
+  border-bottom: 2px solid #a7a6a6;
+}
+.experienxe-paragrap-company{
+  display: flex;
+}
+.start-date-due-date{
+  display: flex;
+}
+.experience-header,.graduate-header,.graduate-degree{
+  font-size: 18px;
+  font-weight: 700;
+  color: #EF5050;
+}
+.experience-paragrap,.experience-company,.graduate-institute{
+  font-size: 16px;
+  font-weight: 600;
+}
+.start-date,.due-date,.due-date-paragrap{
+  font-size: 16px;
+  font-weight: 600;
+  color: #a7a6a6;
+}
+.experience-description,.description-graduate{
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom:50px;
+}
+
+
+
+/*  graduete =======================*/
+
+.institute input{
+  width: 800px;
+}
+.institute p{
+  color: #a7a6a6;
+}
+
+.input-control.date,.input-control.degree{
+  margin-top: 30px;
+  justify-content: space-evenly;
+}
+.input-control.date i,.input-control.degree i{
+  top: 45px;
+}
+input[type="date"]{
+  font-size: 24px; 
+  color: #818080; 
+}
+.degree-date{
+  display: flex;
+}
+.input-control select{
+  width: 385px;
+  height: 48px;
+  padding-left: 10px;
+  font-size: 16px;
+  border: 2px solid #bcbcbc;
+  border-radius: 4px;
+  font-size: 18px;
+  outline: none;
+}
+
+
+#addDegree{
+  width: 290px;
+  height: 48px;
+  font-size: 16px;
+  background-color: #62A1EB;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+.addDegree{
+  width: 810px;
+  position: relative;
+}
+
+.button-finish,.buttonBack{
+  width: 150px;
+  height: 50px;
+  border-radius: 4px;
+  background-color: #6B40E3;
+  font-size: 20px;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+} 
+
+.description-graduate textarea{
+  height: 200px;
+}
+.institute i{
+  position: absolute;
+  left: 770px;
+}
+
+
+

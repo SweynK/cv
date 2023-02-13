@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/d60e59cb7a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="personal.css" />
+    <script defer src="personal.js"></script>
+    <title>Document</title>
+  </head>
+    <!-- Personal Info -->
+    <div class="returnHomePageBtn" id="returnHomePageBtn">
+      <i class="fa-solid fa-chevron-left"></i>
+    </div>
+    <div class="container container--personal-info" id="container">
+      <div class="content">
+        <div class="header header--pesonal-info">
+            <p class="headlineP">პირადი ინფო</p>
+            <p class="pagecalc">1/3</p>
+        </div>
+
+        <form id="form" action="/" method="/">
+          <div class="name-surname div">
+            <div class="input-control">
+              <label for="name">სახელი</label>
+              <input
+              type="text"
+              name="name"
+              id="name"
+              onkeyup="validateName()"
+              placeholder="ანზორ"
+              />
+              <i class="fa-sharp fa-solid fa-circle-check"></i>
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <p id="error-name">მინიმუმ 2 ასო,ქართული ასოები</p>
+          </div>
+          <div class="input-control">
+              <label for="name">გვარი</label>
+              <input
+              type="text"
+              name="surname"
+              id="lastName"
+              placeholder="მუმლაძე"
+              onkeyup="validateLastName();"
+              />
+              <i class="fa-sharp fa-solid fa-circle-check"></i>
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <p id="error-lastName">მინიმუმ 2 ასო,ქართული ასოები</p>
+          </div>
+          </div>
+
+            <div class="uploadPhoto">
+                <p class="phototxt">პირადი ფოტოს ატვირთვა</p>
+                <input type="file" name="image" id="file" accept="image/*" />
+                <label for="file">ატვირტვა</label>
+            </div>
+            <div class="personalInfo">
+                <p class="infoP">ჩემს შესახებ (არასავალდებული)</p>
+                <textarea
+                name="personInfo"
+                id="personInfo"
+                cols="30"
+                rows="10"
+                placeholder="ზოგადი ინფო შენს შესახებ"
+                ></textarea>
+            </div>
+            <div class="input-control email">
+                <label for="email">ელ.ფოსტა</label>
+                <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="anzor65@redberry.ge"
+                onkeyup="validateEmail();"
+                />
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p id="error-email">უნდა მთავრდებოდეს @redberry.ge-ით</p>
+            </div>
+            <div class="input-control telnumber">
+                <label for="number">მობილურის ნომერი</label>
+                <input
+                type="text"
+                name="phone_number"
+                id="phoneNum"
+                placeholder="+995 123 45 67 89"
+                onkeyup="validPhoneNum();"
+                />
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p id="error-phoneNum">
+                უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს
+                </p>
+            </div>
+            <div class="btn-next">
+                <button type="button" class="button button-next-info">შემდეგი</button>
+            </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- experience -->
+
+    <div class="container container--experience hidden" id="container">
+      <div class="content">
+          <div class="header header">
+              <p class="headlineP">გამოცდლიება</p>
+              <p class="pagecalc">2/3</p>
+          </div>
+          <form id="form" action="/">
+              <div class="input-control position">
+                  <label for="position">თანამდებობდა</label>
+                  <input
+                  type="text"
+                  name="position"
+                  id="position"
+                  placeholder="დეველოპერი,დიზაინერი და ა.შ"
+                  onkeyup="validPosition();"
+                  />
+                  <i class="fa-sharp fa-solid fa-circle-check"></i>
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  <p id="error-position">მინმუმუმ 2 სიმბოლო</p>
+              </div>
+              <div class="input-control employed">
+                  <label for="number">დამსაქმებელი</label>
+                  <input
+                  type="text"
+                  name="empoy"
+                  id="employ"
+                  placeholder="დამსაქმებელი"
+                  onkeyup="validEmploy();"
+                  />
+                  <i class="fa-sharp fa-solid fa-circle-check"></i>
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  <p id="error-employ">მინმუმუმ 2 სიმბოლო</p>
+              </div>
+              <div class="date1-date2 div">
+                <div class="input-control date">
+                  <label for="name">დაწყების რიცხვი</label>
+                  <input
+                  type="date"
+                  name="start_date"
+                  id="date1"
+                  onkeyup="validateDate1();"
+                  />
+                  <i class="fa-sharp fa-solid fa-circle-check"></i>
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
+              <div class="input-control date">
+                  <label for="name">დამთავრების რიცხვი</label>
+                  <input
+                  type="date"
+                  name="due_date"
+                  id="date2"
+                  onkeyup="validateDate2();"
+                  />
+                  <i class="fa-sharp fa-solid fa-circle-check"></i>
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
+              </div>
+
+              <div class="personalInfo">
+                  <p class="infoP">აღწერა</p>
+                  <textarea
+                  name="personInfo"
+                  id="roleAtWork"
+                  on
+                  cols="30"
+                  rows="10"
+                  onkeyup="validRole();"
+                  placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
+                  ></textarea>
+                  <i class="fa-sharp fa-solid fa-circle-check"></i>
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
+              <div class="add-more-info buttom">
+                <div class="line"></div>
+                <div class="addExpDiv">
+                    <p id="addExp">მეტი გამოცდილების დამატება</p>
+                </div>
+                <div class="btns-Next-back">
+                    <p class="button-back">უკან</p>
+                    <p class="button-forward">შემდეგი</p>
+                </div>
+              </div>
+          </form>
+      </div>
+    </div>
+    <div class="cvContainer">
+      <div id="personalPage">
+        <div class="personalCvInfo">
+          <div class="fullName">
+            <div class="cvName"></div>
+            <div class="cvLastName"></div>
+          </div>
+          <div class="cvContacts">
+            <div class="cvEmail"></div>
+            <div class="cvPhone"></div>
+          </div>
+          <div class="aboutMe">
+            <div class="aboutMeHeader"></div>
+            <div class="aboutMeTxt"></div>
+          </div>
+        </div>
+        <div class="profile_image"></div>
+      </div>
+      <div class="experinece-cv">
+        <div class="experience-header"></div>
+        <div class="experienxe-paragrap-company">
+          <div class="experience-paragrap"></div>
+          <div class="experience-company"></div>
+        </div>
+        <div class="start-date-due-date">
+          <div class="start-date"></div>
+          <div class="due-date"></div>
+        </div>
+        <div class="experience-description"></div>
+      </div>
+      <div class="graduate-cv">
+        <div class="graduate-header"></div>
+        <div class="graduate-paragraps">
+          <div class="graduate-institute"></div>
+          <div class="graduate-degree"></div>
+        </div>
+        <div class="due-date-paragrap"></div>
+        <div class="description-graduate"></div>
+        <div class="logo">
+          <img src="../assets/imgs/redberry-logo.png" alt="redberry-logo">
+        </div>
+      </div>
+    </div>
+
+    <!---- graduate --------------->
+    <div class="container container--graduate hidden" id="container">
+      <div class="content">
+        <div class="header header">
+          <p class="headlineP">განათლება</p>
+          <p class="pagecalc">2/3</p>
+      </div>
+      <form id="form"  action="/">
+          <div class="input-control institute">
+              <label for="place">სასწავლებელი</label>
+              <input type="text" name="institute" id="institute" onkeyup="validPlace();" placeholder="სასწავლებელი">
+              <i class="fa-sharp fa-solid fa-circle-check"></i>
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <p id="error-place">მინიმუმ 2 სიმბოლო</p>
+          </div>
+          <div class="degree-date">
+            <div class="input-control degree">
+              <label for="name">ხარისხი</label>
+              <select name="degree" id="degree" onkeyup="validDegree()";>
+                <option value="">აირჩიეთ ხარისხი</option>
+              </select>
+              <i class="fa-sharp fa-solid fa-circle-check"></i>
+              <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <div class="input-control date">
+              <label for="name">დამთავრების რიცხვი</label>
+              <input type="date" name="due_date" id="date" onkeyup="validateDate();" placeholder="ანზორ">
+              <i class="fa-sharp fa-solid fa-circle-check"></i>
+              <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          </div>
+          <div class="description-graduate">
+            <div class="personalInfo">
+              <p class="infoP">აღწერა</p>
+              <textarea name="description" id="graduateText" on cols="30" rows="20" onkeyup="validGraduateText();" placeholder="განათლების აღწერა"></textarea>
+              <i class="fa-sharp fa-solid fa-circle-check"></i>
+              <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          </div>
+        
+          <div class="addDegree">
+              <p id="addDegree">სხვა სასწავლებლის დამატება</p>
+          </div>
+          <div class="btns-Next-back">
+              <p class="buttonBack">უკან</p>
+              <p class="button-finish">დასრულება</p> 
+              <!-- <button type="submit" class="button-finish">დასრულება</button>   -->
+          </div>
+        </form> 
+      </div>
+    </div>   
+  </body>
+</html>
+
+
